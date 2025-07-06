@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("pedido-receiver")
-public class PedidoReceiverController {
+public class PedidoReceiverAPIController {
     private final ProduceOrderOnQueueUseCase produceOrderOnQueueUseCase;
 
-    public PedidoReceiverController(ProduceOrderOnQueueUseCase produceOrderOnQueueUseCase) {
+    public PedidoReceiverAPIController(ProduceOrderOnQueueUseCase produceOrderOnQueueUseCase) {
         this.produceOrderOnQueueUseCase = produceOrderOnQueueUseCase;
     }
 
