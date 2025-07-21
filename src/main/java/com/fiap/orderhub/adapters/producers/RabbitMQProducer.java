@@ -1,8 +1,7 @@
 package com.fiap.orderhub.adapters.producers;
 
-import com.fiap.orderhub.dto.PedidoDTO;
+import br.com.orderhub.core.dto.pedidos.CriarPedidoDTO;
 import com.fiap.orderhub.infrastructure.config.RabbitMqProperties;
-import lombok.Value;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +16,7 @@ public class RabbitMQProducer {
         this.properties = properties;
     }
 
-    public void sendMessage(PedidoDTO pedido) {
+    public void sendMessage(CriarPedidoDTO pedido) {
         rabbitTemplate.convertAndSend(properties.getQueue(), pedido);
     }
 }

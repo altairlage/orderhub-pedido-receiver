@@ -1,6 +1,8 @@
 package com.fiap.orderhub.exceptions;
 
-public class ProduceOnQueueException extends RuntimeException {
+import br.com.orderhub.core.exceptions.OrderhubException;
+
+public class ProduceOnQueueException extends OrderhubException {
     public ProduceOnQueueException(String message) {
         super(message);
     }

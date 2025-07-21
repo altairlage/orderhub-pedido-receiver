@@ -1,6 +1,6 @@
 package com.fiap.orderhub.domain.usecases;
 
-import com.fiap.orderhub.dto.PedidoDTO;
+import br.com.orderhub.core.dto.pedidos.CriarPedidoDTO;
 import com.fiap.orderhub.exceptions.ProduceOnQueueException;
 import com.fiap.orderhub.interfaces.IPedidoGateway;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class ProduceOrderOnQueueUseCase {
         this.pedidoGateway = pedidoGateway;
     }
 
-    public void run(PedidoDTO pedido) {
+    public void run(CriarPedidoDTO pedido) {
         try{
             pedidoGateway.produceOnQueue(pedido);
         } catch(Exception e){

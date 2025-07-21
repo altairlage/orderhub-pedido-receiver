@@ -1,7 +1,7 @@
 package com.fiap.orderhub.interfaces;
 
-import com.fiap.orderhub.dto.PedidoDTO;
+import br.com.orderhub.core.dto.pedidos.CriarPedidoDTO;
 
 public interface IPedidoGateway {
-    void produceOnQueue(PedidoDTO pedido);
+    void produceOnQueue(CriarPedidoDTO pedido);
 }

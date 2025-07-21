@@ -1,0 +1,34 @@
+services:
+  orderhub-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: orderhub-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - spring-net
+
+  orderhub-pedido-receiver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: orderhub-pedido-receiver:latest
+    container_name: orderhub-pedido-receiver
+    ports:
+      - "8080:8080"
+    depends_on:
+      - orderhub-rabbitmq
+    environment:
+      SPRING_RABBITMQ_HOST: orderhub-rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
+    networks:
+      - spring-net
+
+networks:
+  spring-net:
+    driver: bridge
