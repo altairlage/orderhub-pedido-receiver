@@ -24,11 +24,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/pedido-receiver",
+					"raw": "localhost:8086/pedido-receiver",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8086",
 					"path": [
 						"pedido-receiver"
 					]
