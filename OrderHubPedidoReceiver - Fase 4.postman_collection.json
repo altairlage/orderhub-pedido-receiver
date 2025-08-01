@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "7626a149-aa7d-41f2-9e2d-02b9842b94a0",
+		"name": "OrderHubPedidoReceiver - Fase 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8464153"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/pedido-receiver",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\": 1,\r\n    \"listaQtdProdutos\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"idProduto\": 1\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"idProduto\": 2\r\n        }\r\n    ],\r\n    \"status\": \"ABERTO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pedido-receiver",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedido-receiver"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
